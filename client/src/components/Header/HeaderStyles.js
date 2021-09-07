@@ -4,13 +4,19 @@ import { breakpoints, colors } from '../../styles/theme';
 
 export const HeaderWrapper = styled.header`
   display: flex;
-  flex-direction: ${(props) => (props.isHamburgerOpened ? 'column' : 'row')};
+  flex-direction: ${(props) => (props.$ishamburgeropened ? 'column' : 'row')};
   justify-content: space-around;
   align-items: center;
-  ${(props) => props.isHamburgerOpened && 'gap: 75px'};
+  ${(props) => props.$ishamburgeropened && 'gap: 75px'};
 
   width: 100%;
+  height: auto;
   padding: 10px 0;
+  z-index: 1;
+  margin-bottom: 20px;
+  @media screen and (${breakpoints.tablet}) {
+    margin-bottom: 50px;
+  }
 
   background-color: ${colors.backgroundColor};
   border: 1px solid ${colors.borderColor};
@@ -23,7 +29,7 @@ export const HeaderImage = styled.img`
 `;
 
 export const HeaderLinksWrapper = styled.div`
-  display: ${(props) => (props.isHamburgerOpened ? 'none' : 'block')};
+  display: ${(props) => (props.$ishamburgeropened ? 'none' : 'block')};
   @media screen and (${breakpoints.desktop}) {
     display: none;
   }
@@ -64,7 +70,7 @@ const HeaderLinksStyle = css`
 
 export const HeaderLinks = styled(Link)`
   ${HeaderLinksStyle};
-  display: ${(props) => (props.isHamburgerOpened ? 'block' : 'none')};
+  display: ${(props) => (props.$ishamburgeropened ? 'block' : 'none')};
 
   @media screen and (${breakpoints.desktop}) {
     display: block;

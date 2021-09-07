@@ -8,17 +8,28 @@ export const HeroSection = styled.div`
   flex-direction: column;
   gap: 20px;
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${chattingImage});
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(${chattingImage});
   width: 100%;
-  height: fit-content;
+  min-height: fit-content;
+  height: 400px;
+  padding: 10vh 5px 0 1vh;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   @media screen and (${breakpoints.tablet}) {
-    height: 400px;
-    padding: 10vh 5px 0 1vh;
+    height: 500px;
+  }
+  @media screen and (${breakpoints.desktop}) {
+    height: 60vh;
   }
 `;
 
@@ -27,4 +38,11 @@ export const HeroText = styled.span`
   color: white;
   font-size: x-large;
   margin: 20px 40px;
+
+  @media screen and (${breakpoints.desktop}) {
+    margin-top: 5px;
+    &:first-child {
+      margin-top: 80px;
+    }
+  }
 `;

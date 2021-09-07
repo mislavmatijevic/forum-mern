@@ -1,6 +1,9 @@
 export const colors = {
+  secondaryColor: 'hsl(220, 30%, 75%)',
+  secondaryColorLight: 'hsl(220, 30%, 90%)',
   backgroundColor: '#f1f1f9',
-  borderColor: '#9f9f9f',
+  borderColor: '#aeaeae',
+  formColor: '#aaaaaa',
   error: '#eb5757',
 };
 

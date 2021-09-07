@@ -1,21 +1,45 @@
-import { createContext } from 'react';
+import React, { createContext } from 'react';
+import Forum from '../pages/Forum';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
 
 const RouterContext = createContext([
   {
     name: 'Home',
-    link: '',
+    link: '/',
+    component: (
+      <React.Fragment>
+        <Home />
+      </React.Fragment>
+    ),
   },
   {
     name: 'Register',
-    link: 'register',
+    link: '/register',
+    component: (
+      <React.Fragment>
+        <Register />
+      </React.Fragment>
+    ),
   },
   {
     name: 'Login',
-    link: 'login',
+    link: '/login',
+    component: (
+      <React.Fragment>
+        <Login />
+      </React.Fragment>
+    ),
   },
   {
     name: 'Forum',
-    link: 'forum',
+    link: '/forum',
+    component: (
+      <React.Fragment>
+        <Forum />
+      </React.Fragment>
+    ),
   },
 ]);
 

@@ -16,20 +16,20 @@ const Header = () => {
 
   return (
     <>
-      <HeaderWrapper isHamburgerOpened={isHamburgerOpened}>
+      <HeaderWrapper $ishamburgeropened={isHamburgerOpened}>
         <HeaderImage alt='Logo image' src={logoImage} />
         {links.map((value, index) => (
           <HeaderLinks
             to={value.link}
             key={index}
-            onClick={() => setIsHamburgerOpened((currentState) => false)}
-            isHamburgerOpened={isHamburgerOpened}>
+            onClick={() => setIsHamburgerOpened(false)}
+            $ishamburgeropened={isHamburgerOpened}>
             {value.name}
           </HeaderLinks>
         ))}
         <HamburgerLinesWrapper
           onClick={() => setIsHamburgerOpened((currentState) => !currentState)}
-          isHamburgerOpened={isHamburgerOpened}>
+          $ishamburgeropened={isHamburgerOpened}>
           <HamburgerLine />
           <HamburgerLine />
           <HamburgerLine />
