@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DefaultTextStyle } from '../../styles/generalStyles';
 
 import { breakpoints, colors } from '../../styles/theme';
 
@@ -29,6 +30,8 @@ export const FormWrapper = styled.form`
 `;
 
 export const FormHeader = styled.div`
+  ${DefaultTextStyle};
+
   background-color: ${colors.secondaryColor};
   padding: 20px;
   text-align: center;
@@ -45,7 +48,7 @@ export const FormContent = styled.div`
 
   @media screen and (${breakpoints.desktop}) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 3fr 4fr;
 
     gap: 30px;
   }
@@ -54,32 +57,41 @@ export const FormContent = styled.div`
 export const FormLabel = styled.label`
   font-size: 25px;
   margin: auto 0;
+  color: ${colors.secondaryColorDark};
 `;
 
 export const FormInput = styled.input`
   border-radius: 5px;
-  height: 30px;
+  height: 35px;
+  background-color: ${(props) => (!props.$state ? `${colors.backgroundColor}` : `white`)};
+  color: ${(props) => props.$state === false && colors.error};
+`;
+
+export const FormError = styled.p`
+  color: ${colors.error};
+  text-align: center;
+  grid-column: 2;
+  &:empty {
+    display: none;
+  }
 `;
 
 export const FormButton = styled.button`
+  ${DefaultTextStyle};
   border-radius: 5px;
   background-color: ${colors.secondaryColorLight};
-  border: 2px solid ${colors.borderColor};
+  border: 2px solid ${(props) => (props.$isClicked ? colors.backgroundColor : colors.borderColor)};
   grid-column: 1 / span 2;
 
   margin: 30px auto 0;
 
-  height: 40px;
-  width: 100%;
+  height: 50px;
+  width: ${(props) => (props.$isClicked ? '90%' : '100%')};
 
   transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &:hover {
     background-color: ${colors.secondaryColor};
-  }
-
-  &:focus {
-    width: 90%;
   }
 `;
 

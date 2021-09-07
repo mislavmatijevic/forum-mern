@@ -1,10 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const DefaultText = styled.span`
+export const DefaultTextStyle = css`
   font-size: 24px;
-  margin: 15px 15%;
 
   color: #1f262e;
+`;
+export const DefaultText = styled.span`
+  ${DefaultTextStyle};
+  margin: 15px 15%;
 `;
 
 export const Illustration = styled.img``;

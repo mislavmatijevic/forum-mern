@@ -1,6 +1,7 @@
 export const colors = {
   secondaryColor: 'hsl(220, 30%, 75%)',
   secondaryColorLight: 'hsl(220, 30%, 90%)',
+  secondaryColorDark: 'hsl(220, 30%, 40%)',
   backgroundColor: '#f1f1f9',
   borderColor: '#aeaeae',
   formColor: '#aaaaaa',

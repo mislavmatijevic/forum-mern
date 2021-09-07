@@ -7,7 +7,7 @@ export const HeaderWrapper = styled.header`
   flex-direction: ${(props) => (props.$ishamburgeropened ? 'column' : 'row')};
   justify-content: space-around;
   align-items: center;
-  ${(props) => props.$ishamburgeropened && 'gap: 75px'};
+  gap: ${(props) => props.$ishamburgeropened && '75px'};
 
   width: 100%;
   height: auto;
