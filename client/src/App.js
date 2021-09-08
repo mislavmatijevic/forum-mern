@@ -12,6 +12,7 @@ import { breakpoints } from './styles/theme';
 const Main = styled.main`
   flex: 1 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   @media screen and (${breakpoints.tablet}) {

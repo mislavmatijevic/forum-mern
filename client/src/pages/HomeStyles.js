@@ -18,18 +18,15 @@ export const HeroSection = styled.div`
     url(${chattingImage});
   width: 100%;
   min-height: fit-content;
-  height: 400px;
-  padding: 10vh 5px 0 1vh;
+  padding: 10vh 5px 10vh 1vh;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   @media screen and (${breakpoints.tablet}) {
-    height: 500px;
-  }
-  @media screen and (${breakpoints.desktop}) {
-    height: 60vh;
+    height: 400px;
+    padding-bottom: 0;
   }
 `;
 
@@ -42,7 +39,7 @@ export const HeroText = styled.span`
   @media screen and (${breakpoints.desktop}) {
     margin-top: 5px;
     &:first-child {
-      margin-top: 80px;
+      margin-top: 60px;
     }
   }
 `;

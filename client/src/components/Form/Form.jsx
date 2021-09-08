@@ -87,7 +87,7 @@ const Form = ({ title, formFields, callback }) => {
               id={value.name}
               placeholder={value.displayName}
               type={value.type}
-              onBlur={onChange}
+              onInput={onChange}
               $state={filledFields[value.name]}
             />
             <FormError id={`${value.name}-error`} />

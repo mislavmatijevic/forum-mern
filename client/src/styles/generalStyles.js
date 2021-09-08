@@ -5,9 +5,11 @@ export const DefaultTextStyle = css`
 
   color: #1f262e;
 `;
-export const DefaultText = styled.span`
+export const DefaultText = styled.p`
   ${DefaultTextStyle};
-  margin: 15px 15%;
+  text-align: center;
 `;
 
-export const Illustration = styled.img``;
+export const Illustration = styled.img`
+  width: 100%;
+`;
