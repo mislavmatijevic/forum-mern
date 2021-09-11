@@ -72,7 +72,7 @@ const Form = ({ title, formFields, callback }) => {
     });
 
     if (allOK) {
-      console.log(filledFields);
+      callback(filledFields);
     }
   };
 

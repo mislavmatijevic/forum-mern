@@ -17,6 +17,9 @@ export const HeaderWrapper = styled.header`
   @media screen and (${breakpoints.tablet}) {
     margin-bottom: 50px;
   }
+  @media screen and (${breakpoints.desktop}) {
+    margin-bottom: 0px;
+  }
 
   background-color: ${colors.backgroundColor};
   border: 1px solid ${colors.borderColor};
