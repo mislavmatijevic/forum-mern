@@ -16,7 +16,9 @@ const userSchema = mongoose.Schema({
   mail: {
     type: String,
     required: [true, 'Mail is required!'],
+    maxLength: [100, 'Email too long!'],
     trim: true,
+    unique: true,
   },
   dateRegistered: {
     type: Date,

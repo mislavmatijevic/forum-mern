@@ -1,5 +1,4 @@
 const express = require('express');
-const notFound = require('./errors/not-found');
 const errorHandle = require('./errors/error-handle');
 require('express-async-errors');
 
@@ -8,11 +7,13 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5001;
 
+const notFound = require('./errors/not-found');
 const authRoutes = require('./routes/auth');
 const postsPublicMiddleware = require('./routes/postsPublic');
 const authenticationMiddleware = require('./middleware/authentication');
 const postsPrivateMiddleware = require('./routes/postsProtected');
 
+app.use(require('cors')());
 app.use(express.json());
 
 app.get('/', (req, res) => {
