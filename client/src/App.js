@@ -5,20 +5,9 @@ import Header from './components/Header/Header';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
-import styled from 'styled-components';
-import RouterContext from './context/RouterContext';
-import { breakpoints } from './styles/theme';
 
-const Main = styled.main`
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @media screen and (${breakpoints.tablet}) {
-    display: initial;
-  }
-`;
+import RouterContext from './context/RouterContext';
+import Main from './components/Main/Main';
 
 const App = () => {
   const links = useContext(RouterContext);
