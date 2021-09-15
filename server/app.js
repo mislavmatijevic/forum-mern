@@ -31,7 +31,7 @@ app.use(errorHandle);
 app.listen(port, async () => {
   try {
     require('./db/connect');
-    console.log(`Example app listening on port ${process.env.PORT}!`);
+    console.log(`MERN Forum API Server listening on port ${process.env.PORT}!`);
   } catch (error) {
     console.log('Problem!');
   }
