@@ -13,7 +13,7 @@ const formFields = [
 
 const Register = () => {
   const [isError, setIsError] = useState(false);
-  const location = useHistory();
+  const history = useHistory();
 
   const handleRegister = async (userObj) => {
     if (userObj.password !== userObj.repeatpassword) {
@@ -21,12 +21,9 @@ const Register = () => {
     }
 
     try {
-      const user = await registerUser(userObj);
-
-      localStorage.setItem('jwt', user.token);
-
+      await registerUser(userObj);
       setIsError(false);
-      location.push('forum');
+      history.push('login');
     } catch (error) {
       setIsError(error.message);
     }

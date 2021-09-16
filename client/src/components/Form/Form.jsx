@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FormWrapper,
   FormHeader,
@@ -24,7 +24,7 @@ const regexps = {
  * @returns
  */
 const Form = ({ title, formFields, callback }) => {
-  const [isButtonClicked, setisButtonClicked] = useState(false);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   // field name = 'string' or false if failed regex
   const [filledFields, setFilledFields] = useState(
@@ -34,12 +34,17 @@ const Form = ({ title, formFields, callback }) => {
     }, {})
   );
 
-  const setButtonClicked = () => {
-    setisButtonClicked(true);
+  useEffect(() => {
+    let mounted = true;
     setTimeout(() => {
-      setisButtonClicked(false);
+      if (mounted === true) {
+        setIsButtonClicked(false);
+      }
     }, 300);
-  };
+    return () => {
+      mounted = false;
+    };
+  }, [isButtonClicked]);
 
   const onChange = (event) => {
     const fieldName = event.target.id;
@@ -93,7 +98,7 @@ const Form = ({ title, formFields, callback }) => {
             <FormError id={`${value.name}-error`} />
           </React.Fragment>
         ))}
-        <FormButton onClick={setButtonClicked} $isClicked={isButtonClicked}>
+        <FormButton onClick={() => setIsButtonClicked(true)} $isClicked={isButtonClicked}>
           {title}
         </FormButton>
       </FormContent>

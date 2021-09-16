@@ -1,10 +1,10 @@
 import apiOrigin from './api';
 
-export const registerUser = async (userRegister) => {
-  const responseJSON = await fetch(`${apiOrigin}/register`, {
+export const loginUser = async (userLogin) => {
+  const responseJSON = await fetch(`${apiOrigin}/login`, {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify(userRegister),
+    body: JSON.stringify(userLogin),
   });
 
   const response = await responseJSON.json();
