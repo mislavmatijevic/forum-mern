@@ -28,7 +28,7 @@ const login = async (req, res, next) => {
     throw new CustomError('Wrong password.', 401);
   }
 
-  const token = jwt.sign({ _id }, process.env.JWT_KEY);
+  const token = generateJWT(_id);
   return res.status(200).json({ success: true, token });
 };
 
@@ -43,8 +43,12 @@ const register = async (req, res, next) => {
   userObject.password = hash;
 
   const { _id } = await User.create(userObject);
-  const token = jwt.sign({ _id }, process.env.JWT_KEY);
+  const token = generateJWT(_id);
   return res.status(201).json({ success: true, token });
+};
+
+const generateJWT = (userId) => {
+  return jwt.sign({ _id: userId }, process.env.JWT_KEY, { expiresIn: '5m' });
 };
 
 module.exports = {
