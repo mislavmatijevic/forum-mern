@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import chattingImage from '../assets/people-chatting.jpg';
-import { DefaultText } from '../styles/generalStyles';
-import { breakpoints } from '../styles/theme';
+import chattingImage from '../../assets/people-chatting.jpg';
+import { DefaultText } from '../../styles/generalStyles';
+import { breakpoints } from '../../styles/theme';
 
 export const HeroSection = styled.div`
   display: flex;
