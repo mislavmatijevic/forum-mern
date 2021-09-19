@@ -3,7 +3,7 @@ import {
   HamburgerLine,
   HamburgerLinesWrapper,
   HeaderImage,
-  HeaderLinks,
+  HeaderLink,
   HeaderLinksWrapper,
   HeaderLogOutButton,
   HeaderWrapper,
@@ -29,18 +29,18 @@ const Header = () => {
       <HeaderWrapper $ishamburgeropened={isHamburgerOpened}>
         <HeaderImage alt='Logo image' src={logoImage} />
         <HeaderLinksWrapper $ishamburgeropened={isHamburgerOpened}>
-          <HeaderLinks to='/' onClick={() => setIsHamburgerOpened(false)}>
+          <HeaderLink to='/' onClick={() => setIsHamburgerOpened(false)}>
             Home
-          </HeaderLinks>
-          <HeaderLinks to='/register' onClick={() => setIsHamburgerOpened(false)}>
+          </HeaderLink>
+          <HeaderLink to='/register' onClick={() => setIsHamburgerOpened(false)}>
             Register
-          </HeaderLinks>
-          <HeaderLinks to='/login' onClick={() => setIsHamburgerOpened(false)}>
+          </HeaderLink>
+          <HeaderLink to='/login' onClick={() => setIsHamburgerOpened(false)}>
             Login
-          </HeaderLinks>
-          <HeaderLinks to='/forum' onClick={() => setIsHamburgerOpened(false)}>
+          </HeaderLink>
+          <HeaderLink to='/forum' onClick={() => setIsHamburgerOpened(false)}>
             Forum
-          </HeaderLinks>
+          </HeaderLink>
           {authContext.jwt && <HeaderLogOutButton onClick={handleLogOut} />}
         </HeaderLinksWrapper>
         <HamburgerLinesWrapper

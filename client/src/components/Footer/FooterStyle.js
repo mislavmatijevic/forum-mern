@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../styles/theme';
+import { breakpoints, colors } from '../../styles/theme';
 
 export const FooterWrapper = styled.footer`
   display: flex;
@@ -11,4 +11,8 @@ export const FooterWrapper = styled.footer`
   width: 100%;
   padding: 10px;
   margin-top: 20px;
+
+  @media screen and (${breakpoints.desktop}) {
+    margin-top: 0;
+  }
 `;

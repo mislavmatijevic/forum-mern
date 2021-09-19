@@ -1,8 +1,10 @@
 const CustomError = require('../errors/CustomError');
 const Post = require('../models/post');
+const User = require('../models/user');
 
 const getAllPosts = async (req, res) => {
   const posts = await Post.find({});
+
   res.json({ success: true, posts });
 };
 

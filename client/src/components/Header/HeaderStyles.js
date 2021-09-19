@@ -40,8 +40,6 @@ export const HeaderImage = styled.img`
 
 export const HeaderLinksWrapper = styled.div`
   position: absolute;
-  margin: 15px 100px;
-  height: 30px;
   width: 90%;
 
   display: ${(props) => (props.$ishamburgeropened ? 'flex' : 'none')};
@@ -54,11 +52,13 @@ export const HeaderLinksWrapper = styled.div`
   gap: ${(props) => props.$ishamburgeropened && '75px'};
 
   @media screen and (${breakpoints.desktop}) {
+    height: 30px;
+    margin: 15px 100px;
     display: flex;
   }
 `;
 
-export const HeaderLinks = styled(Link)`
+export const HeaderLink = styled(Link)`
   display: block;
   text-decoration: none;
   color: #20272f;
@@ -103,7 +103,7 @@ export const HamburgerLinesWrapper = styled.div`
 `;
 
 export const HamburgerLine = styled.div`
-  height: 3px;
+  height: 4px;
   width: 40px;
   background-color: black;
 `;

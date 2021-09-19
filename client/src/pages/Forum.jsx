@@ -1,7 +1,8 @@
 import React from 'react';
+import ForumLayout from '../components/ForumLayout/ForumLayout';
 
 const Forum = () => {
-  return <div></div>;
+  return <ForumLayout />;
 };
 
 export default Forum;
